@@ -1,11 +1,13 @@
-import { env } from './env'
-import { app } from './server'
+import fastify from 'fastify'
+import { PrismaClient } from '@prisma/client'
 
-app
-  .listen({
-    host: '0.0.0.0',
-    port: env.PORT,
-  })
-  .then(() => {
-    console.log('HTTP Server Running!')
-  })
+export const app = fastify()
+
+const prisma = new PrismaClient()
+
+prisma.user.create({
+  data: {
+    name: 'Matheus Robusti Henriques Marqui',
+    email: 'math.marqui@gmail.com',
+  },
+})
