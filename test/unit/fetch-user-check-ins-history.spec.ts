@@ -24,7 +24,7 @@ describe('Fetch User Check Ins History Service', () => {
 
     const { checkIns } = await sut.execute({
       userId: 'user-01',
-      page: 1
+      page: 1,
     })
 
     expect(checkIns).toHaveLength(2)
