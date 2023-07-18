@@ -20,13 +20,15 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
 
   const registerService = makeCreateGymService()
 
-  await registerService.execute({
+  const { gym } = await registerService.execute({
     title,
     description,
     phone,
     latitude,
     longitude,
   })
+
+  console.log(gym)
 
   return reply.status(201).send()
 }
