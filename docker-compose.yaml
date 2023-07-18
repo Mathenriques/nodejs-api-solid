@@ -4,7 +4,7 @@ services:
   ignite-api-solid-pg:
     image: bitnami/postgresql
     ports:
-      - 3333:5432
+      - 50432:5432
     environment:
       - POSTGRES_USERNAME=postgres
       - POSTGRES_PASSWORD=postgres
